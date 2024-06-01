@@ -49,7 +49,7 @@ public:
     /// </summary>
     /// <param name="hInstance"></param>
     /// <param name="nCmdShow"></param>
-    int                     Run(HINSTANCE hInstance, int nCmdShow);
+    virtual int                     Run(HINSTANCE hInstance, int nCmdShow);
 
 protected:
     D2D1_POINT_2F _jointPoints[JointType_Count] = {};
