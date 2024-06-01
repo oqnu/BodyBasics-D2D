@@ -49,10 +49,15 @@ public:
     /// </summary>
     /// <param name="hInstance"></param>
     /// <param name="nCmdShow"></param>
-    virtual int                     Run(HINSTANCE hInstance, int nCmdShow);
+    int                     Run(HINSTANCE hInstance, int nCmdShow);
 
 protected:
     D2D1_POINT_2F _jointPoints[JointType_Count] = {};
+
+    /// <summary>
+    /// Main processing function
+    /// </summary>
+    void                    Update();
 
 private:
     HWND                    m_hWnd;
@@ -81,11 +86,6 @@ private:
     ID2D1SolidColorBrush*   m_pBrushHandClosed;
     ID2D1SolidColorBrush*   m_pBrushHandOpen;
     ID2D1SolidColorBrush*   m_pBrushHandLasso;
-
-    /// <summary>
-    /// Main processing function
-    /// </summary>
-    void                    Update();
 
     /// <summary>
     /// Initializes the default Kinect sensor
