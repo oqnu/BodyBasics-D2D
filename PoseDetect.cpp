@@ -30,15 +30,16 @@ int APIENTRY wWinMain(
 }
 
 void PoseDetect::Update() {
-    detect();
+    std::cout << detect() << std::endl;
     CBodyBasics::Update();
 }
-
 
 bool PoseDetect::detect() {
 	D2D1_POINT_2F shoulder = _jointPoints[JointType_ShoulderLeft];
 	D2D1_POINT_2F elbow = _jointPoints[JointType_ElbowLeft];
 	D2D1_POINT_2F wrist = _jointPoints[JointType_WristLeft];
-	std::cout << fabs(elbow.y - shoulder.y);
+    if (fabs(elbow.y - shoulder.y) <= 10 && fabs(wrist.x - elbow.x) <= 10) {
+        return true;
+    }
 	return false;
 }
