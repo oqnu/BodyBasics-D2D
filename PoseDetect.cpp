@@ -29,6 +29,12 @@ int APIENTRY wWinMain(
     application.Run(hInstance, nShowCmd);
 }
 
+int PoseDetect::Run(HINSTANCE hInstance, int nCmdShow) {
+    int res = CBodyBasics::Run(hInstance, nCmdShow);
+    detect();
+    return res;
+}
+
 bool PoseDetect::detect() {
 	D2D1_POINT_2F shoulder = _jointPoints[JointType_ShoulderLeft];
 	D2D1_POINT_2F elbow = _jointPoints[JointType_ElbowLeft];

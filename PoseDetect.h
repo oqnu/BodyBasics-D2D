@@ -9,6 +9,9 @@ public:
 
 	bool detect();
 
+	int Run(HINSTANCE hInstance, int nCmdShow);
+
+
 private:
 
 };
