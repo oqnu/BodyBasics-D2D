@@ -57,7 +57,7 @@ protected:
     /// <summary>
     /// Main processing function
     /// </summary>
-    void                    Update();
+    virtual void                    Update();
 
 private:
     HWND                    m_hWnd;

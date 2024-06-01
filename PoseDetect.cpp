@@ -29,11 +29,6 @@ int APIENTRY wWinMain(
     application.Run(hInstance, nShowCmd);
 }
 
-//int PoseDetect::Run(HINSTANCE hInstance, int nCmdShow) {
-//    int res = CBodyBasics::Run(hInstance, nCmdShow);
-//    detect();
-//    return res;
-//}
 void PoseDetect::Update() {
     detect();
     CBodyBasics::Update();

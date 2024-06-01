@@ -9,10 +9,8 @@ public:
 
 	bool detect();
 
-	int Run(HINSTANCE hInstance, int nCmdShow);
-
 protected:
-	void Update();
+	void Update() override;
 
 private:
 
