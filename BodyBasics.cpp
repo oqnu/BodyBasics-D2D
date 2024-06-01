@@ -15,32 +15,32 @@ static const float c_TrackedBoneThickness = 6.0f;
 static const float c_InferredBoneThickness = 1.0f;
 static const float c_HandSize = 30.0f;
 
-/// <summary>
-/// Entry point for the application
-/// </summary>
-/// <param name="hInstance">handle to the application instance</param>
-/// <param name="hPrevInstance">always 0</param>
-/// <param name="lpCmdLine">command line arguments</param>
-/// <param name="nCmdShow">whether to display minimized, maximized, or normally</param>
-/// <returns>status</returns>
-int APIENTRY wWinMain(    
-	_In_ HINSTANCE hInstance,
-    _In_opt_ HINSTANCE hPrevInstance,
-    _In_ LPWSTR lpCmdLine,
-    _In_ int nShowCmd
-)
-{
-    AllocConsole();
-    FILE* stream;
-    freopen_s(&stream, "CONOUT$", "w", stdout);
-    freopen_s(&stream, "CONOUT$", "w", stderr);
-
-    UNREFERENCED_PARAMETER(hPrevInstance);
-    UNREFERENCED_PARAMETER(lpCmdLine);
-
-    CBodyBasics application;
-    application.Run(hInstance, nShowCmd);
-}
+///// <summary>
+///// Entry point for the application
+///// </summary>
+///// <param name="hInstance">handle to the application instance</param>
+///// <param name="hPrevInstance">always 0</param>
+///// <param name="lpCmdLine">command line arguments</param>
+///// <param name="nCmdShow">whether to display minimized, maximized, or normally</param>
+///// <returns>status</returns>
+//int APIENTRY wWinMain(    
+//	_In_ HINSTANCE hInstance,
+//    _In_opt_ HINSTANCE hPrevInstance,
+//    _In_ LPWSTR lpCmdLine,
+//    _In_ int nShowCmd
+//)
+//{
+//    AllocConsole();
+//    FILE* stream;
+//    freopen_s(&stream, "CONOUT$", "w", stdout);
+//    freopen_s(&stream, "CONOUT$", "w", stderr);
+//
+//    UNREFERENCED_PARAMETER(hPrevInstance);
+//    UNREFERENCED_PARAMETER(lpCmdLine);
+//
+//    CBodyBasics application;
+//    application.Run(hInstance, nShowCmd);
+//}
 
 /// <summary>
 /// Constructor
