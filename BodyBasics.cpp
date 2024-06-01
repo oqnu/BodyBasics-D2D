@@ -348,7 +348,7 @@ void CBodyBasics::ProcessBody(INT64 nTime, int nBodyCount, IBody** ppBodies)
                     if (SUCCEEDED(hr) && bTracked)
                     {
                         Joint joints[JointType_Count]; 
-                        //D2D1_POINT_2F jointPoints[JointType_Count];
+                        D2D1_POINT_2F jointPoints[JointType_Count];
                         HandState leftHandState = HandState_Unknown;
                         HandState rightHandState = HandState_Unknown;
 
@@ -361,14 +361,15 @@ void CBodyBasics::ProcessBody(INT64 nTime, int nBodyCount, IBody** ppBodies)
                             for (int j = 0; j < _countof(joints); ++j)
                             {
                                 //std::cout << '(' << j << ") " << joints[j].Position.X << ", " << joints[j].Position.Y << ", " << joints[j].Position.Z << std::endl;
-                                _jointPoints[j] = BodyToScreen(joints[j].Position, width, height);
+                                _jointPoints[j] = BodyToScreen(joints[j].Position, 1000, 1000);
+                                jointPoints[j] = BodyToScreen(joints[j].Position, width, height);
                                 //std::cout << '(' << j << ") " << _jointPoints[j].x << ", " << _jointPoints[j].y << std::endl;
                             }
 
-                            DrawBody(joints, _jointPoints);
+                            DrawBody(joints, jointPoints);
 
-                            DrawHand(leftHandState, _jointPoints[JointType_HandLeft]);
-                            DrawHand(rightHandState, _jointPoints[JointType_HandRight]);
+                            DrawHand(leftHandState, jointPoints[JointType_HandLeft]);
+                            DrawHand(rightHandState, jointPoints[JointType_HandRight]);
                         }
                     }
                 }

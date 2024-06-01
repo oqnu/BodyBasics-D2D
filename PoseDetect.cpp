@@ -34,10 +34,15 @@ void PoseDetect::Update() {
     CBodyBasics::Update();
 }
 
+void remapPoint() {
+
+}
+
 bool PoseDetect::detect() {
 	D2D1_POINT_2F shoulder = _jointPoints[JointType_ShoulderLeft];
 	D2D1_POINT_2F elbow = _jointPoints[JointType_ElbowLeft];
 	D2D1_POINT_2F wrist = _jointPoints[JointType_WristLeft];
+    std::cout << wrist.x << ' ' << wrist.y << '\n';
     if (fabs(elbow.y - shoulder.y) <= 10 && fabs(wrist.x - elbow.x) <= 10) {
         return true;
     }
